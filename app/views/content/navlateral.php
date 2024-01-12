@@ -1,12 +1,11 @@
-
 <?php
 function generarOpcionesMenu(): array {
     return [
-        ['title' => 'GASTOS', 'link' => "../backoffice/withdrawals_de_banco_list.php", 'aria-label' => 'gastos', 'label' => 'JUSTIFICAR RETIROS DEL BANCO', 'icon' => '<i class="fas fa-envelope-open-dollar"></i>'],
-        ['title' => 'GASTOS DE CUENTA T', 'link' => "../backoffice/cuentat_gasto_list.php", 'aria-label' => 'COTIZAR', 'label' => 'GASTOS DE CUENTA T', 'icon' => '<i class="fas fa-comment-alt-dollar"></i>'],
-        ['title' => 'LINKS DE TODO AL BANCO', 'link' => "../backoffice/todo_a_banco_list.php", 'aria-label' => 'LINKS DE TODO AL BANCO', 'label' => 'LINKS DE TODO AL BANCO', 'icon' => '<i class="fas fa-university"></i>'],
-        ['title' => 'PROGRAMAR VENTAS', 'link' => "../bodega/bodega_reporte_ventas.php", 'aria-label' => 'PROGRAMAR VENTAS', 'label' => 'PROGRAMAR VENTAS', 'icon' => '<i class="fas fa-alarm-clock"></i>'],
-        ['title' => 'DEPOSITA EN', 'link' => "../backoffice/depositar_en_editar.php", 'aria-label' => 'DEPOSITA EN', 'label' => 'DEPOSITA EN', 'icon' => '<i class="fas fa-cash-register"></i>'],
+        ['title' => 'Cajas', 'link' => "../backoffice/withdrawals_de_banco_list.php", 'aria-label' => 'Cajas', 'label' => 'Cajas', 'icon' => '<i class="fas fa-money-check-alt"></i>'],
+        ['title' => 'Categorias', 'link' => "../backoffice/cuentat_gasto_list.php", 'aria-label' => 'Categorias', 'label' => 'Categorias', 'icon' => '<i class="fas fa-th-list"></i>'],
+        ['title' => 'Clientes', 'link' => "../backoffice/todo_a_banco_list.php", 'aria-label' => 'Clientes', 'label' => 'Clientes', 'icon' => '<i class="fas fa-user-circle"></i>'],
+        ['title' => 'Productos', 'link' => "../bodega/bodega_reporte_ventas.php", 'aria-label' => 'Productos', 'label' => 'Productos', 'icon' => '<i class="fab fa-product-hunt"></i>'],
+        ['title' => 'Ventas', 'link' => "../backoffice/depositar_en_editar.php", 'aria-label' => 'Ventas', 'label' => 'Ventas', 'icon' => '<i class="fas fa-barcode"></i>'],
     ];
 }
 
@@ -61,11 +60,12 @@ echo generarMenuHTML($opcionesMenu);
         // No ocultar el botón de cerrar cuando el menú está abierto
         document.getElementById('toggleNav').style.display = 'block';
     });
-</script>
-<script>
     $(document).ready(function() {
         $(".draggable-menu").draggable();
     });
+</script>
+<script>
+
 </script>
 <style>
 
@@ -242,8 +242,8 @@ echo generarMenuHTML($opcionesMenu);
         border-right: 0
     }
     .gcss-theme-light.side-nav-widget li a span.icon {
-        color: #000;
-        background-color: #ffba00;
+        color: #f5f0f0;
+        background-color: #35363a;
         border: 1px solid #d1d1d1;
         border-left: 0
     }
@@ -253,13 +253,13 @@ echo generarMenuHTML($opcionesMenu);
         border-right: 0
     }
     .gcss-theme-light.side-nav-widget li.inline-block .inline-links .icon {
-        color: #000;
+        color: #f5f0f0;
         background-color: #fff;
         border: none
     }
     .gcss-theme-light.side-nav-widget li.inline-block .icon {
         color: #000;
-        background-color: #ffba00;
+        background-color: #35363a;
         border: 1px solid #d1d1d1;
         border-left: 0
     }
@@ -267,20 +267,20 @@ echo generarMenuHTML($opcionesMenu);
         color: #fff
     }
     .gcss-theme-dark.side-nav-widget li a span.title-txt {
-        background-color: #000000;
-        border: 1px solid #eea75e;
+        background-color: #35363a;
+        border: 1px solid #35363a;
         border-right: 0;
         border-radius: 10px 0 0   10px;
     }
     .gcss-theme-dark.side-nav-widget li a span.icon {
-        color: #000;
-        background-color: #f7a659;
-        border: 1px solid #f5f5f5;
+        color: #f5f0f0;
+        background-color: #35363a;
+        border: 1px solid #f5f0f0;
         border-left: 0
 
     }
     .gcss-theme-dark.side-nav-widget li.inline-block .inline-links {
-        background-color: #000;
+        background-color: #f5f0f0;
         border: 1px solid #3a9ce2;
 
         border-right: 0;
@@ -288,12 +288,12 @@ echo generarMenuHTML($opcionesMenu);
     }
     .gcss-theme-dark.side-nav-widget li.inline-block .inline-links .icon {
         color: #fff;
-        background-color: #000000;
+        background-color: #f5f0f0;
         border: 0px solid #3a9ce2;
         border-radius: 10px 0 0 10px;
     }
     .gcss-theme-dark.side-nav-widget li.inline-block .icon {
-        color: #000;
+        color: #f5f0f0;
         background-color: #8dcaf5;
         border: 1px solid #3a9ce2;
         border-left: 0

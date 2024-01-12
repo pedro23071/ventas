@@ -15,8 +15,8 @@
         </figure>
         <br>
 
-        <div style="color: #FFFFFF" class="full-width tittles navLateral-body-tittle-menu has-text-centered is-uppercase">
-             &nbsp; <small style="font-size: .70em; "><?php echo $_SESSION['usuario']; ?> </small>
+        <div style="color: #FFFFFF" class="full-width  navLateral-body-tittle-menu has-text-centered ">
+             &nbsp; <small style="font-size: .90em; "><?php echo $_SESSION['usuario']; ?> </small>
 		</div>
         <div style="height: 3px; background-color: var(--color-three);" class="full-box nav-lateral-bar"></div>
 		<nav class="full-width">
@@ -25,7 +25,7 @@
 				<li class="full-width">
 					<a href="<?php echo APP_URL; ?>dashboard/" class="full-width">
 						<div class="navLateral-body-cl">
-							<i class="fab fa-dashcube fa-fw"></i>
+                            <i class="fas fa-home"></i>
 						</div>
 						<div class="navLateral-body-cr">
 							Menu Principal
@@ -327,7 +327,7 @@
 							<i class="fas fa-cogs fa-fw"></i>
 						</div>
 						<div class="navLateral-body-cr">
-							COnfiguraciones
+                            Sistema
 						</div>
 						<span class="fas fa-chevron-down"></span>
 					</a>
@@ -338,7 +338,7 @@
 									<i class="fas fa-store-alt fa-fw"></i>
 								</div>
 								<div class="navLateral-body-cr">
-									Datos de empresa
+									Datos de Tienda
 								</div>
 							</a>
 						</li>
