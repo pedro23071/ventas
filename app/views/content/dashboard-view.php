@@ -131,6 +131,16 @@
 
         <!-- Sección 1: Cajas -->
         <div class="box-section">
+
+            <div class="box">
+                <a href="<?php echo APP_URL; ?>pedroList/">
+                    <p class="heading">Pedro</p>
+                    <hr>
+                    <i class="fas fa-cash-register"></i>
+                    <p class="title"><?php echo $total_cajas->rowCount(); ?> Registrados</p>
+                </a>
+            </div>
+
             <div class="box">
                 <a href="<?php echo APP_URL; ?>cashierList/">
                     <p class="heading">Cajas</p>

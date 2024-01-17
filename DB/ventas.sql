@@ -315,3 +315,48 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+CREATE TABLE IF NOT EXISTS `devolucion` (
+    `devolucion_id` int NOT NULL AUTO_INCREMENT,
+    `venta_id` int NOT NULL,
+    `venta_codigo` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT '',
+    `devolucion_motivo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '',
+    `observaciones` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '',
+    `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY (`devolucion_id`),
+    KEY `devolucion_ibfk_1` (`venta_id`),
+    CONSTRAINT `devolucion_ibfk_1` FOREIGN KEY (`venta_id`) REFERENCES `venta` (`venta_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+
+CREATE TABLE IF NOT EXISTS `devolucion_producto` (
+    `devolucion_producto_id` int NOT NULL AUTO_INCREMENT,
+    `devolucion_id` int NOT NULL,
+    `producto_id` int NOT NULL,
+    `devolucion_producto_qty` int NOT NULL,
+    PRIMARY KEY (`devolucion_producto_id`),
+    KEY `devolucion_producto_ibfk_1` (`devolucion_id`),
+    KEY `devolucion_producto_ibfk_2` (`producto_id`),
+    CONSTRAINT `devolucion_producto_ibfk_1` FOREIGN KEY (`devolucion_id`) REFERENCES `devolucion` (`devolucion_id`),
+    CONSTRAINT `devolucion_producto_ibfk_2` FOREIGN KEY (`producto_id`) REFERENCES `producto` (`producto_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+
+CREATE TABLE IF NOT EXISTS devolucion(
+                           devolucion_id INT PRIMARY KEY AUTO_INCREMENT,
+                           venta_id INT NOT NULL,
+                           venta_codigo varchar(200) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish2_ci NOT NULL,
+                           devolucion_motivo VARCHAR(255) DEFAULT '',
+                           observaciones VARCHAR(255) DEFAULT '',
+                           created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                           updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                           FOREIGN KEY (venta_id) REFERENCES venta(venta_id)
+);
+
+CREATE TABLE IF NOT EXISTS devolucion_producto (
+                                     devolucion_producto_id INT PRIMARY KEY AUTO_INCREMENT,
+                                     devolucion_id INT,
+                                     producto_id INT,
+                                     devolucion_producto_qty INT,
+                                     FOREIGN KEY (devolucion_id) REFERENCES devolucion(devolucion_id),
+                                     FOREIGN KEY (producto_id) REFERENCES producto(producto_id)
+);
