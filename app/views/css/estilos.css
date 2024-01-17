@@ -35,7 +35,7 @@ body,html{
 
     position: relative;
     background-color: rgba(53, 54, 58, -.2); /* Ajusta la opacidad según sea necesario */
-    background: url('https://images.pexels.com/photos/9794174/pexels-photo-9794174.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load') center/cover;
+    /*background: url('https://images.pexels.com/photos/9794174/pexels-photo-9794174.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load') center/cover;*/
 
 
     /*background-color: #303034;*/
@@ -220,7 +220,7 @@ body,html{
 }
 
 .navLateral-body {
-    background: url('https://images.pexels.com/photos/9794174/pexels-photo-9794174.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load') center/cover;
+    /*background: url('https://images.pexels.com/photos/9794174/pexels-photo-9794174.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load') center/cover;*/
     position: relative;
     background-color: rgba(53, 54, 58, 0.8); /* Ajusta la opacidad según sea necesario */
 }
@@ -258,7 +258,9 @@ body,html{
 
 .navLateral-body-cr {
     width: 70%;
-    font-family: "RobotoCondensedLight";
+    /*font-family: "RobotoCondensedLight";*/
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
 }
 
 .navLateral-body-tittle-menu {
@@ -281,7 +283,7 @@ body,html{
     font-weight: bold;
 }
 .menu-principal li a:hover{
-    color: #417cfb;
+    color: #12adef;
 }
 .menu-principal li a div.navLateral-body-cl,
 .menu-principal li a div.navLateral-body-cr{
@@ -317,7 +319,7 @@ body,html{
 }
 .btn-subMenu-show .navLateral-body-cl,
 .btn-subMenu-show .navLateral-body-cr{
-    color: #b5eef5;
+    color: #0a7cff;
     font-weight: bold!important;
     font-size: 1.5em;
 }

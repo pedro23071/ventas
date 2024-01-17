@@ -176,16 +176,16 @@
 
 			$numeroPaginas =ceil($total/$registros);
 
-			$tabla.='
-		        <div class="table-container">
+			$tabla.= '
+		        <div class="table-container tableh">
 		        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
 		            <thead>
 		                <tr>
-		                    <th class="has-text-centered">Numero</th>
-		                    <th class="has-text-centered">Nombre</th>
-		                    <th class="has-text-centered">Efectivo</th>
-		                    <th class="has-text-centered">Actualizar</th>
-		                    <th class="has-text-centered">Eliminar</th>
+		                    <th style="background-color: #35363a; color: #F5F5F5" class="has-text-centered">Numero</th>
+		                    <th style="background-color: #35363a; color: #F5F5F5" class="has-text-centered">Nombre</th>
+		                    <th style="background-color: #35363a; color: #F5F5F5" class="has-text-centered">Efectivo</th>
+		                    <th style="background-color: #35363a; color: #F5F5F5" class="has-text-centered">Actualizar</th>
+		                    <th style="background-color: #35363a; color: #F5F5F5" class="has-text-centered">Eliminar</th>
 		                </tr>
 		            </thead>
 		            <tbody>
@@ -200,19 +200,23 @@
 							<td>'.$rows['caja_numero'].'</td>
 							<td>'.$rows['caja_nombre'].'</td>
 							<td>'.$rows['caja_efectivo'].'</td>
-			                <td>
+			                <td><span data-title="actualizar caja">
 			                    <a href="'.APP_URL.'cashierUpdate/'.$rows['caja_id'].'/" class="button is-success is-rounded is-small">
-			                    	<i class="fas fa-sync fa-fw"></i>
-			                    </a>
+			                    	
+			                         	<i class="fas fa-sync fa-fw"></i>
+			                         	  </a>
+			                    	</span> 
+			                  
 			                </td>
 			                <td>
-			                	<form class="FormularioAjax" action="'.APP_URL.'app/ajax/cajaAjax.php" method="POST" autocomplete="off" >
-
+			                	<form class="FormularioAjax" action="'.APP_URL.'app/ajax/cajaAjax.php" method="POST" autocomplete="off" > 
+                                <span data-title="eliminar">
 			                		<input type="hidden" name="modulo_caja" value="eliminar">
 			                		<input type="hidden" name="caja_id" value="'.$rows['caja_id'].'">
-
-			                    	<button type="submit" class="button is-danger is-rounded is-small">
-			                    		<i class="far fa-trash-alt fa-fw"></i>
+			                    	<button title="" type="submit" class="button is-danger is-rounded is-small">
+			                    		 
+			                    		   <i class="far fa-trash-alt fa-fw"></i>
+                                         </span>
 			                    	</button>
 			                    </form>
 			                </td>

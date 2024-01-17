@@ -1,0 +1,49 @@
+
+#contenedor {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    width: calc(100% - 40px); /* Ancho del 100% menos 20px de relleno a cada lado */
+    max-width: 1200px; /* Máximo ancho de 1200px para evitar que se expanda indefinidamente */
+    margin: 0 auto; /* Centra el contenedor en la página */
+    box-sizing: border-box; /* Incluye el padding y el border en el ancho total */
+    transition: box-shadow 0.3s ease; /* Agregamos una transición para suavizar el efecto */
+}
+#contenedor:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Cambiamos la sombra en el hover */
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.tableh{
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: 3px solid #ccc;
+    border-radius: 8px 8px 8px 8px;
+    border-collapse: collapse;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f2f2f2;
+    transition: box-shadow 0.3s ease;
+}
+.tableh:hover{
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 2);
+
+    transition: box-shadow 0.5s ease;
+}
+
+
+

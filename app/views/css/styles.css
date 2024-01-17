@@ -660,6 +660,65 @@ table form{
         width: 100%;
     }
 }
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip::after {
+    content: attr(data-title);
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1;
+}
+
+.tooltip:hover::after {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Ocultar el título predeterminado */
+*[data-title] {
+    position: relative;
+    display: inline-block;
+}
+
+*[data-title]::before {
+    content: attr(title);
+    position: absolute;
+    white-space: nowrap;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.8em;
+    background-color: #333;
+    color: #fff;
+    padding: 3px;
+    border-radius: 3px;
+    margin-top: 5px; /* Ajuste de posición */
+}
+
+*[data-title]:hover::before {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Evitar scroll forzado */
+body {
+    overflow: hidden;
+}
+
+/* Restablecer scroll para el contenido necesario */
+.container {
+    overflow: auto;
+}
 
 @media(min-width: 993px){
     .nav-lateral.active{

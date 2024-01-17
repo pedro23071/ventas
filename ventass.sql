@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 12-01-2024 a las 17:55:47
--- Versión del servidor: 8.0.31
+-- Tiempo de generación: 14-11-2023 a las 17:30:43
+-- Versión del servidor: 8.0.33
 -- Versión de PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -39,9 +39,8 @@ CREATE TABLE `caja` (
 --
 
 INSERT INTO `caja` (`caja_id`, `caja_numero`, `caja_nombre`, `caja_efectivo`) VALUES
-(1, 1, 'Caja Principal', '0.00'),
-(2, 2, 'Corte Inicio', '1000.00'),
-(3, 3, 'home', '7500.00');
+(1, 1, 'Caja Principal', '336.00'),
+(2, 2, 'CAJA 1', '0.00');
 
 -- --------------------------------------------------------
 
@@ -54,6 +53,13 @@ CREATE TABLE `categoria` (
   `categoria_nombre` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish2_ci NOT NULL,
   `categoria_ubicacion` varchar(150) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `categoria`
+--
+
+INSERT INTO `categoria` (`categoria_id`, `categoria_nombre`, `categoria_ubicacion`) VALUES
+(1, 'TRUPER', 'ESTANTE 1');
 
 -- --------------------------------------------------------
 
@@ -79,7 +85,8 @@ CREATE TABLE `cliente` (
 --
 
 INSERT INTO `cliente` (`cliente_id`, `cliente_tipo_documento`, `cliente_numero_documento`, `cliente_nombre`, `cliente_apellido`, `cliente_provincia`, `cliente_ciudad`, `cliente_direccion`, `cliente_telefono`, `cliente_email`) VALUES
-(1, 'Otro', 'N/A', 'Publico', 'General', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A');
+(1, 'Otro', 'N/A', 'Publico', 'General', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'),
+(2, 'DNI', '2312312312', 'brajan', 'medrano gonzalez', 'ecatepec mexico', 'mexico', 'mexico 55060 ectapec de morelos', '5620976663', 'brajanans@hotmail.com');
 
 -- --------------------------------------------------------
 
@@ -94,6 +101,13 @@ CREATE TABLE `empresa` (
   `empresa_email` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish2_ci NOT NULL,
   `empresa_direccion` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `empresa`
+--
+
+INSERT INTO `empresa` (`empresa_id`, `empresa_nombre`, `empresa_telefono`, `empresa_email`, `empresa_direccion`) VALUES
+(1, 'Tlaperia cruz', '5620976663', 'brajanans@hotmail.com', 'DOLORES NORTE MANZANA 3 LOTE 1 CASA 7');
 
 -- --------------------------------------------------------
 
@@ -115,6 +129,13 @@ CREATE TABLE `producto` (
   `producto_foto` varchar(500) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish2_ci NOT NULL,
   `categoria_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`producto_id`, `producto_codigo`, `producto_nombre`, `producto_stock_total`, `producto_tipo_unidad`, `producto_precio_compra`, `producto_precio_venta`, `producto_marca`, `producto_modelo`, `producto_estado`, `producto_foto`, `categoria_id`) VALUES
+(1, '000001', 'MARTILLO', 1, 'Unidad', '150.00', '168.00', 'TRUPER', 'TRUPER', 'Habilitado', '000001_37.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -138,9 +159,8 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`usuario_id`, `usuario_nombre`, `usuario_apellido`, `usuario_email`, `usuario_usuario`, `usuario_clave`, `usuario_foto`, `caja_id`) VALUES
-(1, 'Administrador', 'Principal', '', 'Administrador', '$2y$10$Jgm6xFb5Onz/BMdIkNK2Tur8yg/NYEMb/tdnhoV7kB1BwIG4R05D2', 'Administrador_45.png', 1),
-(2, 'brajan', 'medrano', '', 'brajan', '$2y$10$39Tbt2cYkFfWG28YSBEI6.sHNZpXMuWVe0keQhfOGOsR4Iw7DCLOy', 'brajan_84.png', 1),
-(3, 'root', 'root', '', 'root', '$2y$10$kKuYJ3IC.uf3fzATv9IyJuhvsyzWI8J.kK6GhQtSOcpEkAgowd1tO', 'root_18.png', 1);
+(1, 'Administrador', 'Principal', '', 'Administrador', '$2y$10$Jgm6xFb5Onz/BMdIkNK2Tur8yg/NYEMb/tdnhoV7kB1BwIG4R05D2', '', 1),
+(2, 'brajan', 'medrano gonzalez', 'brajanans@hotmail.com', 'brajan', '$2y$10$4JA8RT89hJsIHeLjQiAN..ka5INSkOVDgAMU9NoXxDP/Ky7ZF9i2q', 'brajan_66.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -246,49 +266,50 @@ ALTER TABLE `venta_detalle`
 -- AUTO_INCREMENT de la tabla `caja`
 --
 ALTER TABLE `caja`
-  MODIFY `caja_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `caja_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `categoria_id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `categoria_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `cliente_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `cliente_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `cliente_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `empresa`
 --
 ALTER TABLE `empresa`
-  MODIFY `empresa_id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `empresa_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `producto_id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `producto_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `usuario_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `usuario_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `venta`
 --
 ALTER TABLE `venta`
-  MODIFY `venta_id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `venta_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `venta_detalle`
 --
 ALTER TABLE `venta_detalle`
-  MODIFY `venta_detalle_id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `venta_detalle_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas

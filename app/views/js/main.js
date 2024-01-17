@@ -72,3 +72,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const elementsWithTooltip = document.querySelectorAll('[data-title]');
+
+    elementsWithTooltip.forEach(element => {
+        element.classList.add('tooltip');
+    });
+});
