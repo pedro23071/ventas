@@ -1,9 +1,9 @@
 
-<div class="container is-fluid mb-6" id="contenedor">
-    <a  href="<?php echo APP_URL; ?>dashboard/"><i class="fas fa-home"></i></a><h1 class="title">Cajas</h1>
+<div class="container is-fluid mb-6" id="contenedor" >
+    <a  href="<?php echo APP_URL; ?>dashboard/"><span data-title="Inicio" class="tooltip"><i class="fas fa-home"></i></a><h1 class="title">Cajas</h1>
 	<h2 class="subtitle has-text-centered"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; Lista de cajas</h2>
 
-<div class="container pb-6 pt-6">
+<div class="container pb-6 pt-6" >
     <div>
         <fieldset>
             <legend>

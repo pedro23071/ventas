@@ -46,4 +46,14 @@ fieldset {
 }
 
 
-
+.forzatooltip{
+    /*position: absolute;*/
+    top: 10% !important; /* Ajusta según tu necesidad vertical */
+    left: 92%; /* Ajusta según tu necesidad horizontal */
+    transform: translate(-50%, -50%);
+    background-color: #161c2d; /* Puedes ajustar el color según tus necesidades */
+    /*color: white!important; !* Puedes ajustar el color del texto según tus necesidades *!*/
+    padding: 5px; /* Puedes ajustar el relleno según tus necesidades */
+    z-index: 1; /* Ajusta según tu necesidad de capas */
+    border-radius: 8px 8px 8px 8px;
+}

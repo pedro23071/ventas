@@ -1,9 +1,21 @@
-<div class="container is-fluid mb-6">
+<div id="contenedor">
+<div class="container is-fluid mb-6"  style="overflow: hidden;">
+    <a  href="<?php echo APP_URL; ?>dashboard/">
+        <span data-title="Inicio" class="tooltip">
+        <i class="fas fa-home"></i></a>
     <h1 class="title">Cajas</h1>
     <h2 class="subtitle"><i class="fas fa-search fa-fw"></i> &nbsp; Buscar Cajas</h2>
+
 </div>
 
-<div class="container pb-6 pt-6">
+
+<div class="container pb-6 pt-6"  style="overflow: hidden;"><span style="visibility: hidden">p</span>
+     <span class="access-icons forzatooltip " style="position: absolute; top: 0; right: 0;">
+                   <a style="color:#FFFFFF;" href="<?php echo APP_URL; ?>cashierSearch/"> <span data-title="Buscar" class="tooltip"><i class="fas fa-search mr-2" ></i></a>&nbsp;
+                   <a  style="color:#FFFFFF;" href="<?php echo APP_URL; ?>cashierNew/"><span data-title="Nueva" class="tooltip"><i class="fas fa-plus mr-2" ></i></a>&nbsp;
+                   <a  style="color:#FFFFFF;" href="<?php echo APP_URL; ?>cashierList/"><span data-title="Lista" class="tooltip"><i class="fas fa-clipboard-list " ></i></a>
+                </span>
+
     <?php
     
         use app\controllers\cashierController;
@@ -11,8 +23,12 @@
 
         if(!isset($_SESSION[$url[0]]) && empty($_SESSION[$url[0]])){
     ?>
+
     <div class="columns">
+
         <div class="column">
+
+
             <form class="FormularioAjax" action="<?php echo APP_URL; ?>app/ajax/buscadorAjax.php" method="POST" autocomplete="off" >
                 <input type="hidden" name="modulo_buscador" value="buscar">
                 <input type="hidden" name="modulo_url" value="<?php echo $url[0]; ?>">
@@ -30,11 +46,15 @@
     <?php }else{ ?>
     <div class="columns">
         <div class="column">
-            <form class="has-text-centered mt-6 mb-6 FormularioAjax" action="<?php echo APP_URL; ?>app/ajax/buscadorAjax.php" method="POST" autocomplete="off" >
+            <form class="has-text-centered mt-4 mb-4 FormularioAjax" action="<?php echo APP_URL; ?>app/ajax/buscadorAjax.php" method="POST" autocomplete="off" >
                 <input type="hidden" name="modulo_buscador" value="eliminar">
                 <input type="hidden" name="modulo_url" value="<?php echo $url[0]; ?>">
+                <fieldset>
+
                 <p><i class="fas fa-search fa-fw"></i> &nbsp; Estas buscando <strong>“<?php echo $_SESSION[$url[0]]; ?>”</strong></p>
-                <br>
+
+                    </fieldset>
+                    <br>
                 <button type="submit" class="button is-danger is-rounded"><i class="fas fa-trash-restore"></i> &nbsp; Eliminar busqueda</button>
             </form>
         </div>
@@ -44,3 +64,13 @@
         }
     ?>
 </div>
+    <?php
+    include "./app/views/inc/btn_back.php";
+    include 'navlateral.php';
+    ?>
+</div>
+</div>
+
+
+
+

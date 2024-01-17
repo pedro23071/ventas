@@ -56,3 +56,9 @@
 		}
 	?>
 </div>
+
+
+<?php
+//include "./app/views/inc/btn_back.php";
+include 'navlateral.php';
+?>

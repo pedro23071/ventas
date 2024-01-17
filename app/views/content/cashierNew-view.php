@@ -4,7 +4,7 @@
 
 <div class="container is-fluid mb-6" style="overflow: hidden;">
     <a  href="<?php echo APP_URL; ?>dashboard/">
-        <span data-title="actualizar caja" class="tooltip">
+        <span data-title="Inicio" class="tooltip">
         <i class="fas fa-home"></i></a><h1 class="title">Cajas</h1>
 	<h2 class="subtitle has-text-centered"><i class="fas fa-cash-register fa-fw"></i> &nbsp; Nueva caja</h2>
 </div>
