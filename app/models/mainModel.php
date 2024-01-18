@@ -101,10 +101,10 @@
 			$campo=$this->limpiarCadena($campo);
 			$id=$this->limpiarCadena($id);
 
-            if($tipo=="Unico"){
+            if($tipo === "Unico"){
                 $sql=$this->conectar()->prepare("SELECT * FROM $tabla WHERE $campo=:ID");
                 $sql->bindParam(":ID",$id);
-            }elseif($tipo=="Normal"){
+            }elseif($tipo === "Normal"){
                 $sql=$this->conectar()->prepare("SELECT $campo FROM $tabla");
             }
             $sql->execute();

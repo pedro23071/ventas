@@ -964,6 +964,10 @@
 			                    	<i class="fas fa-shopping-bag fa-fw"></i>
 			                    </a>
 
+                                <a href="'.APP_URL.'devoNew/'.$rows['venta_codigo'].'/" class="button is-link is-rounded is-small" title="Devolucion de venta Nro. '.$rows['venta_id'].'" >
+                                    <i class="fas fa-people-carry fa-fw"></i>
+			                    </a>
+
 			                	<form class="FormularioAjax is-inline-block" action="'.APP_URL.'app/ajax/ventaAjax.php" method="POST" autocomplete="off" >
 
 			                		<input type="hidden" name="modulo_venta" value="eliminar_venta">
