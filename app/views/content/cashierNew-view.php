@@ -5,7 +5,7 @@
 <div class="container is-fluid mb-6" style="overflow: hidden;">
     <a  href="<?php echo APP_URL; ?>dashboard/">
         <span data-title="Inicio" class="tooltip">
-        <i class="fas fa-home"></i></a><h1 class="title">Cajas</h1>
+        <i style="color: #424448" class="fas fa-home"></i></a><h1 class="title">Cajas</h1>
 	<h2 class="subtitle has-text-centered"><i class="fas fa-cash-register fa-fw"></i> &nbsp; Nueva caja</h2>
 </div>
 
@@ -18,9 +18,9 @@
         <i class="fas fa-clipboard-list fa-fw"></i>
         <!-- Accesos directos -->
         <span class="access-icons" style="position: absolute; top: 0; right: 0;">
-                   <a href="<?php echo APP_URL; ?>cashierSearch/"> <i class="fas fa-search mr-2" title="Buscar"></i></a>
-                   <a href="<?php echo APP_URL; ?>cashierNew/"><i class="fas fa-plus mr-2" title="Nueva"></i></a>
-                   <a href="<?php echo APP_URL; ?>cashierList/"><i class="fas fa-clipboard-list mr-2" title="lista"></i></a>
+                   <a href="<?php echo APP_URL; ?>cashierSearch/"> <i style="color: #424448" class="fas fa-search mr-2" title="Buscar"></i></a>
+                   <a href="<?php echo APP_URL; ?>cashierNew/"><i style="color: #424448" class="fas fa-plus mr-2" title="Nueva"></i></a>
+                   <a href="<?php echo APP_URL; ?>cashierList/"><i style="color: #424448" class="fas fa-clipboard-list mr-2" title="lista"></i></a>
                 </span>
 		<div class="columns">
 		  	<div class="column">

@@ -1,7 +1,7 @@
 
 #contenedor {
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #eff4ff;
+    box-shadow: -14px 13px 10px  rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     padding: 20px;
     width: calc(100% - 40px); /* Ancho del 100% menos 20px de relleno a cada lado */
@@ -11,7 +11,7 @@
     transition: box-shadow 0.3s ease; /* Agregamos una transición para suavizar el efecto */
 }
 #contenedor:hover {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Cambiamos la sombra en el hover */
+    box-shadow: 0 0 20px rgba(14, 13, 13, 0.2); /* Cambiamos la sombra en el hover */
 }
 
 legend {

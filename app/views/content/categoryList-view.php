@@ -13,4 +13,8 @@
 
 		echo $insCategoria->listarCategoriaControlador($url[1],15,$url[0],"");
 	?>
+
+    <?php
+    include 'navlateral.php';
+    ?>
 </div>

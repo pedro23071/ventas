@@ -2,7 +2,7 @@
 <div class="container is-fluid mb-6"  style="overflow: hidden;">
     <a  href="<?php echo APP_URL; ?>dashboard/">
         <span data-title="Inicio" class="tooltip">
-        <i class="fas fa-home"></i></a>
+        <i style="color: #424448" class="fas fa-home"></i></a>
     <h1 class="title">Cajas</h1>
     <h2 class="subtitle"><i class="fas fa-search fa-fw"></i> &nbsp; Buscar Cajas</h2>
 

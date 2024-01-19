@@ -122,14 +122,15 @@ body,html{
     background: #9E9E9E;
 }
 /*=============Estilos barra superior*/
-.navBar{
-    background-color: #f5f5f5;
+.navBar {
+    background-color: rgba(19, 21, 26, 0.8); /* Utiliza un valor alfa menor para mayor transparencia */
     height: 50px;
     color: #fff;
     position: relative;
     margin-bottom: 30px;
-    border-block-end: solid 1px #d8d8d8
+    border-block-end: solid 1px #d8d8d8;
 }
+
 .navBar-options{
     line-height: 45px;
     height: 45px;
@@ -181,7 +182,7 @@ body,html{
     padding-top: 0;
     margin-top: 0;
     box-sizing: border-box;
-    color: #485a64;
+    color: #f7f8f8;
 }
 .navBar-options-list ul li img{
     border: 1px solid #E1E1E1;
@@ -380,7 +381,7 @@ body,html{
                 navicon bar
 ======================================================*/
 .bar_nv{
-    color: #272f37;
+    color: #f7f8f8;
     height: 50px;
     min-width: 50px;
     text-align: center!important;
@@ -392,8 +393,8 @@ body,html{
 
 }
 .bar_nv:hover{
-    color: #485a64;
-    background-image: radial-gradient(circle, rgba(89, 195, 245, 0.37), transparent 80%);
+    color: #bcf6f4;
+    background-image: radial-gradient(circle, #853ed0, transparent 70%);
     cursor: pointer;
 
 }
