@@ -717,7 +717,7 @@ body {
 
 /* Restablecer scroll para el contenido necesario */
 .container {
-    overflow: auto;
+    overflow: hidden;
 }
 
 @media(min-width: 993px){

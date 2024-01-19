@@ -74,7 +74,7 @@ body,html{
     padding: 0;
     width: 100%;
     box-sizing: border-box;
-    color: #485a64;
+    color: #ffffff;
 }
 .list-unstyle{
     margin: 0;
@@ -424,3 +424,5 @@ body,html{
     background-color: #0694dc !important;
     border-color: transparent!important;
 }
+
+

@@ -1,9 +1,9 @@
 
 #contenedor {
-    background-color: #eff4ff;
-    box-shadow: -14px 13px 10px  rgba(0, 0, 0, 0.1);
+    background-color: #00000052;
+    box-shadow: 10px 30px 30px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    padding: 20px;
+    padding: 15px;
     width: calc(100% - 40px); /* Ancho del 100% menos 20px de relleno a cada lado */
     max-width: 1200px; /* Máximo ancho de 1200px para evitar que se expanda indefinidamente */
     margin: 0 auto; /* Centra el contenedor en la página */
@@ -11,11 +11,12 @@
     transition: box-shadow 0.3s ease; /* Agregamos una transición para suavizar el efecto */
 }
 #contenedor:hover {
-    box-shadow: 0 0 20px rgba(14, 13, 13, 0.2); /* Cambiamos la sombra en el hover */
+    box-shadow: 10px 30px 60px rgb(56, 69, 79); /* Cambiamos la sombra en el hover */
 }
 
 legend {
     font-size: 1.2em;
+    font-weight: bold;
     font-weight: bold;
     color: #333;
 }
@@ -28,6 +29,7 @@ fieldset {
 }
 
 .tableh{
+    padding: 10px;
     margin-bottom: 20px;
     overflow: hidden;
     border: 3px solid #ccc;
@@ -56,4 +58,26 @@ fieldset {
     padding: 5px; /* Puedes ajustar el relleno según tus necesidades */
     z-index: 1; /* Ajusta según tu necesidad de capas */
     border-radius: 8px 8px 8px 8px;
+}
+
+
+
+
+
+.border-styled {
+    border-radius: 8px 8px 8px 8px;
+    border: solid rgba(56, 69, 79, 0.8) 4px; /* Borde sólido con el color especificado */
+    padding: 10px; /* Añadir espacio interno */
+    display: inline-block; /* Para que ocupe solo el espacio necesario */
+    color: #38454f; /* Color del texto */
+    text-align: center; /* Alinear el texto al centro */
+    font-weight: bold; /* Hacer el texto en negrita */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el elemento */
+    transition: background-color 0.3s ease; /* Agregar una transición suave para el cambio de color de fondo */
+}
+
+.border-styled:hover {
+    background-color: #38454f; /* Cambiar el color de fondo al pasar el ratón */
+    color: #fff; /* Cambiar el color del texto al pasar el ratón */
+    border: solid #fff 4px; /* Borde sólido con el color especificado */
 }
