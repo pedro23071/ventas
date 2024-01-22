@@ -2,7 +2,7 @@
 <div id="contenedor">
 
 
-<div class="container is-fluid mb-6" style="overflow: hidden;">
+<div class="container is-fluid mb-5" style="overflow: hidden; padding: 10px; background-color: rgba(28,39,57,0.29); border-radius: 8px 8px 8px 8px">
     <a  href="<?php echo APP_URL; ?>dashboard/">
         <span data-title="Inicio" class="tooltip">
         <i style="color: #424448" class="fas fa-home"></i></a><h1 class="title">Cajas</h1>
@@ -56,12 +56,11 @@
         </fieldset>
 	</form>
 
-    <?php include "./app/views/inc/btn_back.php";?>
-
+    <?php include "./app/views/inc/btn_back.php";
+    include 'navlateral.php';
+    ?>
 </div>
-
 </div>
 
 <?php
-include 'navlateral.php';
 ?>

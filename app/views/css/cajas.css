@@ -1,6 +1,6 @@
 
 #contenedor {
-    background-color: #00000052;
+    background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 10px 30px 30px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     padding: 15px;
@@ -11,6 +11,20 @@
     transition: box-shadow 0.3s ease; /* Agregamos una transición para suavizar el efecto */
 }
 #contenedor:hover {
+    box-shadow: 10px 30px 60px rgb(56, 69, 79); /* Cambiamos la sombra en el hover */
+}
+#contenedorVntn {
+    background-color: #00000052;
+    box-shadow: 10px 30px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 15px;
+    width: calc(100% - 40px); /* Ancho del 100% menos 20px de relleno a cada lado */
+    max-width: 1200px; /* Máximo ancho de 1200px para evitar que se expanda indefinidamente */
+    margin: 0 auto; /* Centra el contenedor en la página */
+    box-sizing: border-box; /* Incluye el padding y el border en el ancho total */
+    transition: box-shadow 0.3s ease; /* Agregamos una transición para suavizar el efecto */
+}
+#contenedorVntn:hover {
     box-shadow: 10px 30px 60px rgb(56, 69, 79); /* Cambiamos la sombra en el hover */
 }
 
@@ -28,7 +42,20 @@ fieldset {
     padding: 10px;
 }
 
-.tableh{
+/*.tableh{*/
+/*    padding: 10px;*/
+/*    margin-bottom: 20px;*/
+/*    overflow: hidden;*/
+/*    border: 3px solid #ccc;*/
+/*    border-radius: 8px 8px 8px 8px;*/
+/*    border-collapse: collapse;*/
+/*    width: 100%;*/
+/*    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+/*    background-color: #f2f2f2;*/
+/*    transition: box-shadow 0.3s ease;*/
+/*}*/
+
+.tableh {
     padding: 10px;
     margin-bottom: 20px;
     overflow: hidden;
@@ -36,8 +63,8 @@ fieldset {
     border-radius: 8px 8px 8px 8px;
     border-collapse: collapse;
     width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #f2f2f2;
+    box-shadow: 22px 11px 2px 0px rgba(0, 0, 0, 0.1);
+    background-color: #adadb2;
     transition: box-shadow 0.3s ease;
 }
 .tableh:hover{
