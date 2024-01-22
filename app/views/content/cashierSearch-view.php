@@ -13,7 +13,10 @@
      <span class="access-icons forzatooltip " style="position: absolute; top: 0; right: 0;">
                    <a style="color:#FFFFFF;" href="<?php echo APP_URL; ?>cashierSearch/"> <span data-title="Buscar" class="tooltip"><i class="fas fa-search mr-2" ></i></a>&nbsp;
                    <a  style="color:#FFFFFF;" href="<?php echo APP_URL; ?>cashierNew/"><span data-title="Nueva" class="tooltip"><i class="fas fa-plus mr-2" ></i></a>&nbsp;
-                   <a  style="color:#FFFFFF;" href="<?php echo APP_URL; ?>cashierList/"><span data-title="Lista" class="tooltip"><i class="fas fa-clipboard-list " ></i></a>
+                   <a  style="color:#FFFFFF;" href="<?php echo APP_URL; ?>cashierList/"><span data-title="Lista" class="tooltip"><i  class="fas fa-clipboard-list mr-2 "></i></a>&nbsp;
+                   <a  style="color:#FFFFFF;" href="<?php echo APP_URL; ?>dashboard/"><span data-title="Inicio" class="tooltip"><i  class="fas fa-home mr-2 " title="Inicio"></i> </a> &nbsp;
+
+                   
                 </span>
 
     <?php
