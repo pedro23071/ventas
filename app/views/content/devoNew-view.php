@@ -87,6 +87,7 @@
                                 <th class="has-text-centered">Cant.</th>
                                 <th class="has-text-centered">Precio</th>
                                 <th class="has-text-centered">Subtotal</th>
+                                <th class="has-text-centered">Devolucion</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -106,6 +107,11 @@
                                             <td><?php echo $detalle['venta_detalle_cantidad']; ?></td>
                                             <td><?php echo MONEDA_SIMBOLO.number_format($detalle['venta_detalle_precio_venta'],MONEDA_DECIMALES,MONEDA_SEPARADOR_DECIMAL,MONEDA_SEPARADOR_MILLAR)." ".MONEDA_NOMBRE; ?></td>
                                             <td><?php echo MONEDA_SIMBOLO.number_format($detalle['venta_detalle_total'],MONEDA_DECIMALES,MONEDA_SEPARADOR_DECIMAL,MONEDA_SEPARADOR_MILLAR)." ".MONEDA_NOMBRE; ?></td>
+                                            <td>
+                                                <button>
+                                                    generar devolucion
+                                                </button>
+                                            </td>
                                         </tr>
                                         <?php
                                         $cc++;
@@ -138,11 +144,7 @@
             <div class="columns pb-6 pt-6">
                 <p class="has-text-centered full-width">
                     <?php
-                        echo '<button type="button" class="button is-link is-light is-medium" onclick="print_invoice(\''.APP_URL.'app/pdf/invoice.php?code='.$datos_venta['venta_codigo'].'\')" title="Imprimir factura Nro. '.$datos_venta['venta_id'].'" >
-			<i class="fas fa-file-invoice-dollar fa-fw"></i> &nbsp; Imprimir factura
-			</button> &nbsp;&nbsp; 
-
-			<button type="button" class="button is-link is-light is-medium" onclick="print_ticket(\''.APP_URL.'app/pdf/ticket.php?code='.$datos_venta['venta_codigo'].'\')" title="Imprimir ticket Nro. '.$datos_venta['venta_id'].'" ><i class="fas fa-receipt fa-fw"></i> &nbsp; Imprimir ticket</button>';
+                        echo '<button type="button" class="button is-link is-light is-medium" onclick="devolucio_de_venta(\''.$datos_venta['venta_codigo'].'\')" title="Cancelar venta '.$datos_venta['venta_id'].'" ><i class="fas fa-people-carry fa-fw"></i> &nbsp; Cancelar Venta Completa</button>';
                     ?>
                 </p>
             </div>
@@ -153,3 +155,22 @@
         }
     ?>
 </div>
+
+<script>
+    function devolucio_de_venta(venta_codigo){
+        fetch(`<?php echo APP_URL ?>app/ajax/devolucionAjax.php?action=devolucionAllVenta&venta_code=${venta_codigo}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Data from API:', data);
+            })
+            .catch(error => {
+                console.error('Fetch error:', error);
+            });
+
+    }
+</script>
