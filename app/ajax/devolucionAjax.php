@@ -6,19 +6,19 @@
 
     use app\controllers\devolucionController;
 
-    if(isset($_POST['modulo_producto'])){
+    if(isset($_REQUEST["action"])){
 
         $devolucion = new devolucionController();
 
-        if($_POST['modulo_producto'] === "registrar"){
-            echo $devolucion->registrarDevolucionControlador();
+        if($_REQUEST["action"] === "devolucionAllVenta"){
+            echo $devolucion->devolucionAllVenta();
         }
 
-        if($_POST['modulo_producto'] === "eliminar"){
+        if($_REQUEST["action"] === "eliminar"){
             echo $devolucion->eliminarDevolucionControlador();
         }
 
-        if($_POST['modulo_producto'] === "actualizar"){
+        if($_REQUEST["action"] === "actualizar"){
             echo $devolucion->actualizarDevolucionControlador();
         }
 

@@ -6,8 +6,11 @@
 
     class devolucionController extends mainModel{
 
-        public function registrarDevolucionControlador(){
-
+        public function devolucionAllVenta(){
+            $venta_code = $_REQUEST["venta_code"];
+            var_dump($venta_code);
+            var_dump("test desade controlador");
+            die();
         }
 
 
