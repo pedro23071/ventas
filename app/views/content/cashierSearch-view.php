@@ -1,3 +1,4 @@
+<?php require_once "marginAuto.php"; ?>
 <div id="contenedor">
 <div class="container is-fluid mb-6"  style="overflow: hidden;">
     <a  href="<?php echo APP_URL; ?>dashboard/">

@@ -1,4 +1,4 @@
-
+<?php require_once "marginAuto.php"; ?>
 <div class="container is-fluid mb-6" id="contenedor" >
     <a  href="<?php echo APP_URL; ?>dashboard/"><span data-title="Inicio" class="tooltip"><i style="color: #424448" class="fas fa-home"></i></a><h1 class="title">Cajas</h1>
 	<h2 class="subtitle has-text-centered"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; Lista de cajas</h2>

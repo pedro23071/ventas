@@ -1,11 +1,8 @@
+<?php require_once "marginAuto.php"; ?>
 
 <div id="contenedor">
-
-
-<div class="container is-fluid mb-5" style="overflow: hidden; padding: 10px; background-color: rgba(204, 215 ,221,0.31); border-radius: 8px 8px 8px 8px">
-<p class="title"><i class="fas fa-cash-register fa-fw"></i> Cajas</p>
-   
-	
+    <div class="container is-fluid mb-5" style="overflow: hidden; padding: 10px; background-color: rgba(204, 215 ,221,0.31); border-radius: 8px 8px 8px 8px">
+    <p class="title"><i class="fas fa-cash-register fa-fw"></i> Cajas</p>
 </div>
 
 <div class="container pb-6 pt-6" style="overflow: hidden;">

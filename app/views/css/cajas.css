@@ -105,7 +105,12 @@ fieldset {
 }
 
 .border-styled:hover {
-    background-color: #38454f; /* Cambiar el color de fondo al pasar el ratón */
+    background-color: #bdd6e8; /* Cambiar el color de fondo al pasar el ratón */
     color: #fff; /* Cambiar el color del texto al pasar el ratón */
     border: solid #fff 4px; /* Borde sólido con el color especificado */
+}
+
+
+.maginAuto{
+    margin-bottom: 50px;
 }

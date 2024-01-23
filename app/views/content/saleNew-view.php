@@ -1,4 +1,4 @@
-<div id="contenedorVntn" >
+<div id="contenedor" style="margin-bottom: 5px!important;">
 
     <div class="container is-fluid mb-2" style="overflow: hidden">
         <h1  style="font-size: 1rem; font-weight: bold">Ventas</h1>
@@ -22,9 +22,9 @@
 
                 <div class="column pb-6 ">
 
-                    <fieldset class="fieldsetvnt" style="background-color:#a8a2a2 ">
-                        <legend><i class="fas fa-question-circle"></i></legend>
-                        <p class="has-text-centered pt-4 pb-4" style="color: #fff">
+                    <fieldset class="fieldsetvnt" style="background-color:rgb(173,203,208) ">
+                        <legend><i class="fas fa-question-circle" style="color: #ffffff; background-color: rgb(236,131,11); border-radius: 15px 15px 15px 15px"  ></i></legend>
+                        <p  class="has-text-centered pt-4 pb-4" style="color: #fff">
                             <small>Para agregar productos debe de digitar el código de barras en el campo "Código de producto" y luego presionar &nbsp; <strong class="is-uppercase" ><i class="far fa-check-circle"></i> &nbsp; Agregar producto</strong>. También puede agregar el producto mediante la opción &nbsp; <strong class="is-uppercase"><i class="fas fa-search"></i> &nbsp; Buscar producto</strong>. Ademas puede escribir el código de barras y presionar la tecla <strong class="is-uppercase">enter</strong></small>
                         </p>
                     </fieldset>
@@ -263,8 +263,8 @@
                             <h4 style="font-size: 20px" class=" is-5 has-text-centered has-text-weight-bold mb-5"><small>TOTAL A PAGAR: <?php echo MONEDA_SIMBOLO.number_format($_SESSION['venta_total'],MONEDA_DECIMALES,MONEDA_SEPARADOR_DECIMAL,MONEDA_SEPARADOR_MILLAR)." ".MONEDA_NOMBRE; ?></small></h4>
 
                             <?php if($_SESSION['venta_total']>0){ ?>
-                                <p class="has-text-centered">
-                                    <button style="background-color: #0065f5;font-size: larger;" type="submit" class="button is-info is-rounded"><i class="far fa-save"></i> &nbsp; Guardar venta</button>
+                                <p class="has-text-centered" title="Realizar Venta">
+                                    <button style="background-color: #0065f5;font-size: larger;" type="submit" class="button is-info is-rounded"><i class="far fa-save"></i> &nbsp; Cobrar</button>
                                 </p>
                             <?php } ?>
                             <p class="has-text-centered pt-5">
@@ -284,7 +284,6 @@
             </article>
         <?php } ?>
     </div>
-
     <!-- Modal buscar producto -->
     <div class="modal" id="modal-js-product">
         <div class="modal-background"></div>
