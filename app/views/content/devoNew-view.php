@@ -160,13 +160,14 @@
     function devolucio_de_venta(venta_codigo){
         fetch(`<?php echo APP_URL ?>app/ajax/devolucionAjax.php?action=devolucionAllVenta&venta_code=${venta_codigo}`)
             .then(response => {
-                if (!response.ok) {
+                if (!response.status) {
                     throw new Error('Network response was not ok');
                 }
                 return response.json();
             })
             .then(data => {
-                console.log('Data from API:', data);
+                console.log('Respuesta correcta:', data.success());
+                debugger
             })
             .catch(error => {
                 console.error('Fetch error:', error);
