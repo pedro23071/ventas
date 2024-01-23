@@ -1,4 +1,4 @@
-<div id="contenedor" >
+<div id="contenedorVntn" >
 
     <div class="container is-fluid mb-2" style="overflow: hidden">
         <h1  style="font-size: 1rem; font-weight: bold">Ventas</h1>
@@ -22,9 +22,9 @@
 
                 <div class="column pb-6 ">
 
-                    <fieldset class="fieldsetvnt">
-                        <legend></legend>
-                        <p class="has-text-centered pt-4 pb-4">
+                    <fieldset class="fieldsetvnt" style="background-color:#a8a2a2 ">
+                        <legend><i class="fas fa-question-circle"></i></legend>
+                        <p class="has-text-centered pt-4 pb-4" style="color: #fff">
                             <small>Para agregar productos debe de digitar el código de barras en el campo "Código de producto" y luego presionar &nbsp; <strong class="is-uppercase" ><i class="far fa-check-circle"></i> &nbsp; Agregar producto</strong>. También puede agregar el producto mediante la opción &nbsp; <strong class="is-uppercase"><i class="fas fa-search"></i> &nbsp; Buscar producto</strong>. Ademas puede escribir el código de barras y presionar la tecla <strong class="is-uppercase">enter</strong></small>
                         </p>
                     </fieldset>

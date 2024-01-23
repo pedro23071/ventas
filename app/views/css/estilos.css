@@ -48,7 +48,7 @@ body,html{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #000428;
+    background: #020626;
     background: -webkit-linear-gradient(to right, #004e92, #000428);
     background: linear-gradient(to right, #004e92, #000428);
 }
@@ -74,7 +74,7 @@ body,html{
     padding: 0;
     width: 100%;
     box-sizing: border-box;
-    color: #ffffff;
+    color: #161c2d;
 }
 .list-unstyle{
     margin: 0;

@@ -11,7 +11,8 @@
                 <!-- Accesos directos -->
                 <span  class="access-icons" style="position: absolute; top: 0; right: 0; color:#424448">
                    <a href="<?php echo APP_URL; ?>cashierSearch/"> <i style="color:#424448" class="fas fa-search mr-2" title="Buscar"></i></a>
-                   <a href="<?php echo APP_URL; ?>cashierNew/"><i style="color:#424448" class="fas fa-plus" title="Nueva"></i></a>
+                   <a href="<?php echo APP_URL; ?>cashierNew/"><i style="color:#424448" class="fas fa-plus mr-2" title="Nueva"></i></a>
+                   <a href="<?php echo APP_URL; ?>dashboard/"><i  style="color: #424448" class="fas fa-home " title="Inicio"></i> </a> 
                 </span>
             </legend>
 
