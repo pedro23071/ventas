@@ -1,9 +1,15 @@
-<div class="container is-fluid mb-6">
+<?php require_once "marginAuto.php"; ?>
+<div id="contenedor" style="max-width: 1800px">
+
+<div class="container is-fluid mb-">
     <h1 class="title">Productos</h1>
     <h2 class="subtitle"><i class="fas fa-search fa-fw"></i> &nbsp; Buscar productos</h2>
+    <?php   include "./app/views/inc/btn_back.php"; ?>
+
 </div>
 
-<div class="container pb-6 pt-6">
+    <div class="container pb-5 pt-5" >  <fieldset>
+
     <?php
     
         use app\controllers\productController;
@@ -11,7 +17,9 @@
 
         if(!isset($_SESSION[$url[0]]) && empty($_SESSION[$url[0]])){
     ?>
-    <div class="columns">
+
+    <div class="columns" >
+
         <div class="column">
             <form class="FormularioAjax" action="<?php echo APP_URL; ?>app/ajax/buscadorAjax.php" method="POST" autocomplete="off" >
                 <input type="hidden" name="modulo_buscador" value="buscar">
@@ -26,6 +34,8 @@
                 </div>
             </form>
         </div>
+
+
     </div>
     <?php }else{ ?>
     <div class="columns">
@@ -43,4 +53,6 @@
             echo $insProducto->listarProductoControlador($url[1],10,$url[0],$_SESSION[$url[0]],0);
         }
     ?>
+
+</div></fieldset>
 </div>

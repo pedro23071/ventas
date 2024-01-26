@@ -1,3 +1,7 @@
+<?php require_once "marginAuto.php"; ?>
+
+<div id="contenedor" style="max-width: 1800px">
+
 <div class="container is-fluid">
 	<h1 style="font-size: 2em" "class="title"><i class="fab fa-dashcube fa-fw"></i>&nbsp;DASHBOARD</h1>
     <p>¡Bienvenido <span style="font-weight: bold"><?php echo $_SESSION['usuario']; ?></span>! Este es el panel principal del sistema acá podrá encontrar atajos para acceder a los distintos listados de cada módulo del sistema.</p>
@@ -277,7 +281,7 @@
 
     </div>
 <!---->
-
+</div>
 
 <?php
 include 'navlateral.php';

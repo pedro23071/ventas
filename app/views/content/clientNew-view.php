@@ -1,9 +1,12 @@
-<div class="container is-fluid mb-6">
+<?php require_once "marginAuto.php"; ?>
+<div id="contenedor">
+<div class="container is-fluid mb-4">
 	<h1 class="title">Clientes</h1>
-	<h2 class="subtitle"><i class="fas fa-male fa-fw"></i> &nbsp; Nuevo cliente</h2>
-</div>
 
-<div class="container pb-6 pt-6">
+</div>
+    <?php  include "./app/views/inc/btn_back.php"; ?>
+    <fieldset><legend>	<h2 class="subtitle"><i class="fas fa-male fa-fw"></i> &nbsp;Nuevo cliente</h2></legend>
+<div class="container pb-6 pt-4">
 
 	<form class="FormularioAjax" action="<?php echo APP_URL; ?>app/ajax/clienteAjax.php" method="POST" autocomplete="off" >
 
@@ -82,8 +85,12 @@
 			<button type="reset" class="button is-link is-light is-rounded"><i class="fas fa-paint-roller"></i> &nbsp; Limpiar</button>
 			<button type="submit" class="button is-info is-rounded"><i class="far fa-save"></i> &nbsp; Guardar</button>
 		</p>
-		<p class="has-text-centered pt-6">
-            <small>Los campos marcados con <?php echo CAMPO_OBLIGATORIO; ?> son obligatorios</small>
-        </p>
+
 	</form>
+    </fieldset>
+    <p class="has-text-centered pt-6">
+        <small>Los <b>campos</b> marcados con <?php echo CAMPO_OBLIGATORIO; ?> son <b>obligatorios</b></small>
+    </p>
+</div>
+
 </div>

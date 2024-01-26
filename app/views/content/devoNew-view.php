@@ -1,9 +1,11 @@
-<div class="container is-fluid mb-6">
+<?php require_once "marginAuto.php"; ?>
+
+<div id="contenedor" style="max-width: 1800px">
+    <div class="container is-fluid mb-4">
     <h1 class="title">Devolucion</h1>
-    <h2 class="subtitle"><i class="fas fa-cash-register fa-fw"></i> &nbsp; Nueva devolucion</h2>
 </div>
 
-<div class="container pb-6 pt-6">
+<div class="container pb-6 pt-2">
     <?php
 
         include "./app/views/inc/btn_back.php";
@@ -15,10 +17,12 @@
         if($datos->rowCount()==1){
             $datos_venta=$datos->fetch();
             ?>
-            <h2 class="title has-text-centered">Datos de la venta <?php echo " (".$code.")"; ?></h2>
+
+    <fieldset><legend>
+            <h2 class="subtitle"><i class="fas fa-cash-register fa-fw"></i> &nbsp; Nueva devolucion</h2></legend>
+        <h2 class="title has-text-centered">Datos de la venta <?php echo " (".$code.")"; ?></h2>
             <div class="columns pb-6 pt-6">
                 <div class="column">
-
                     <div class="full-width sale-details text-condensedLight">
                         <div class="has-text-weight-bold">Fecha</div>
                         <span class="has-text-link"><?php echo date("d-m-Y", strtotime($datos_venta['venta_fecha']))." ".$datos_venta['venta_hora']; ?></span>
@@ -175,3 +179,5 @@
 
     }
 </script>
+</div>
+</fieldset>

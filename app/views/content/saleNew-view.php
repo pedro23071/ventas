@@ -1,11 +1,8 @@
 <div id="contenedor" style="margin-bottom: 5px!important;">
 
     <div class="container is-fluid mb-2" style="overflow: hidden">
-        <h1  style="font-size: 1rem; font-weight: bold">Ventas</h1>
-        <h2 style="background-color: #fff; border-radius: 8px 8px 8px 8px" class="subtitle">
-            <i class="fas fa-cart-plus fa-fw"></i> &nbsp;Nueva venta
-            <a  href="" style="float: right;"> <i style="color:#434448;" class="fas fa-cash-register mr-2"></i></a>
-        </h2>
+        <h1 class="title"  style="font-size: 2rem; font-weight: bold">Ventas</h1>
+
 
 
 
@@ -28,7 +25,10 @@
                             <small>Para agregar productos debe de digitar el código de barras en el campo "Código de producto" y luego presionar &nbsp; <strong class="is-uppercase" ><i class="far fa-check-circle"></i> &nbsp; Agregar producto</strong>. También puede agregar el producto mediante la opción &nbsp; <strong class="is-uppercase"><i class="fas fa-search"></i> &nbsp; Buscar producto</strong>. Ademas puede escribir el código de barras y presionar la tecla <strong class="is-uppercase">enter</strong></small>
                         </p>
                     </fieldset>
-
+<fieldset style="border: 1px solid #cbd6dc"> <legend> <h2 style="background-color: #fff; border-radius: 8px 8px 8px 8px" class="subtitle">
+            <i class="fas fa-cart-plus fa-fw"></i> &nbsp;Nueva venta
+            <a  href="" style="float: right;"> </a>
+        </h2></legend>
                     <form class="pt-6 pb-6" id="sale-barcode-form" autocomplete="off">
                         <div class="columns">
                             <div class="column is-one-quarter">
@@ -165,7 +165,7 @@
                         </table>
                     </div>
                 </div>
-
+                </fieldset>
                 <div class="column is-one-quarter border-styled" >
                     <h2 style="font-weight: 900; font-size: 25px;" class="  has-text-centered">Datos de la venta</h2>
                     <hr>
@@ -268,7 +268,7 @@
                                 </p>
                             <?php } ?>
                             <p class="has-text-centered pt-5">
-                                <small>Los campos marcados con <?php echo CAMPO_OBLIGATORIO; ?> son obligatorios</small>
+                                <small>Los <b style="color: #0a7cff">campos</b> marcados con <?php echo CAMPO_OBLIGATORIO; ?> son <b style="color:#0a7cff;">obligatorios</b></small>
                             </p>
                             <input type="hidden" value="<?php echo number_format($_SESSION['venta_total'],MONEDA_DECIMALES,MONEDA_SEPARADOR_DECIMAL,""); ?>" id="venta_total_hidden">
                         </form>

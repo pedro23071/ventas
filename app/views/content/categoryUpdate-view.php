@@ -1,8 +1,10 @@
+<?php require_once "marginAuto.php"; ?>
+<div id="contenedor">
 <div class="container is-fluid mb-6">
 	<h1 class="title">Categorías</h1>
-	<h2 class="subtitle"><i class="fas fa-sync-alt"></i> &nbsp; Actualizar categoría</h2>
-</div>
 
+</div>
+    <fieldset><legend><h2 class="subtitle"><i class="fas fa-sync-alt"></i> &nbsp; Actualizar categoría</h2></legend>
 <div class="container pb-6 pt-6">
 	<?php
 	
@@ -40,9 +42,6 @@
 		<p class="has-text-centered">
 			<button type="submit" class="button is-success is-rounded"><i class="fas fa-sync-alt"></i> &nbsp; Actualizar</button>
 		</p>
-		<p class="has-text-centered pt-6">
-            <small>Los campos marcados con <?php echo CAMPO_OBLIGATORIO; ?> son obligatorios</small>
-        </p>
 	</form>
 	<?php
 		}else{
@@ -50,3 +49,10 @@
 		}
 	?>
 </div>
+    </fieldset>
+    <p class="has-text-centered pt-6">
+        <small>Los <b>campos</b> marcados con <?php echo CAMPO_OBLIGATORIO; ?> son <b>obligatorios</b></small>
+    </p>
+</div>
+
+

@@ -94,7 +94,7 @@ fieldset {
 
 .border-styled {
     border-radius: 8px 8px 8px 8px;
-    border: solid rgba(56, 69, 79, 0.8) 4px; /* Borde sólido con el color especificado */
+    border: solid rgb(203, 214, 220) 4px; /* Borde sólido con el color especificado */
     padding: 10px; /* Añadir espacio interno */
     display: inline-block; /* Para que ocupe solo el espacio necesario */
     color: #38454f; /* Color del texto */

@@ -1,5 +1,7 @@
-<div class="container is-fluid mb-6">
-	<?php 
+<div id="contenedor" style="max-width: 1800px">
+    <div class="container is-fluid mb-0">
+
+	<?php
 
 		$id=$insLogin->limpiarCadena($url[1]);
 
@@ -12,10 +14,9 @@
 	<h2 class="subtitle"><i class="fas fa-sync-alt"></i> &nbsp; Actualizar usuario</h2>
 	<?php } ?>
 </div>
-<div class="container pb-6 pt-6">
+<div class="container pb-4 pt-3">
 	<?php
 	
-		include "./app/views/inc/btn_back.php";
 
 		$datos=$insLogin->seleccionarDatos("Unico","usuario","usuario_id",$id);
 
@@ -90,8 +91,8 @@
 				</div>
 		  	</div>
 		</div>
-		<br><br>
-		<p class="has-text-centered">
+		<br>
+		<p class="has-text-centered has-text-weight-bold">
 			SI desea actualizar la clave de este usuario por favor llene los 2 campos. Si NO desea actualizar la clave deje los campos vacíos.
 		</p>
 		<br>
@@ -109,8 +110,8 @@
 				</div>
 		  	</div>
 		</div>
-		<br><br><br>
-		<p class="has-text-centered">
+		<br>
+		<p class="has-text-centered  has-text-weight-bold">
 			Para poder actualizar los datos de este usuario por favor ingrese su USUARIO y CLAVE con la que ha iniciado sesión
 		</p>
 		<div class="columns">
@@ -130,7 +131,7 @@
 		<p class="has-text-centered">
 			<button type="submit" class="button is-success is-rounded"><i class="fas fa-sync-alt"></i> &nbsp; Actualizar</button>
 		</p>
-		<p class="has-text-centered pt-6">
+		<p class="has-text-centered pt-4">
             <small>Los campos marcados con <?php echo CAMPO_OBLIGATORIO; ?> son obligatorios</small>
         </p>
 	</form>
@@ -139,4 +140,5 @@
 			include "./app/views/inc/error_alert.php";
 		}
 	?>
+</div>
 </div>

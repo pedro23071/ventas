@@ -1,3 +1,4 @@
+<div id="contenedor" style="max-width: 1800px">
 <div class="container is-fluid mb-6">
     <h1 class="title">Ventas</h1>
     <h2 class="subtitle"><i class="fas fa-search-dollar fa-fw"></i> &nbsp; Buscar ventas por código</h2>
@@ -45,4 +46,5 @@
             include "./app/views/inc/print_invoice_script.php";
         }
     ?>
+</div>
 </div>

@@ -1,8 +1,10 @@
+<div id="contenedor" style="max-width: 1800px">
 <div class="container is-fluid mb-6">
 	<h1 class="title">Empresa</h1>
-	<h2 class="subtitle"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Datos de empresa</h2>
+
 </div>
 
+    <fieldset><legend><h2 class="subtitle"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Datos de empresa</h2></legend>
 <div class="container pb-6 pt-6">
 	<?php
 
@@ -102,4 +104,6 @@
 	</form>
 
 	<?php } ?>
+</div>
+        </fieldset>
 </div>

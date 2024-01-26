@@ -1,18 +1,22 @@
-<div class="container is-fluid mb-6">
-	<?php 
+<div id="contenedor" style="max-width: 1800px">
 
-		$id=$insLogin->limpiarCadena($url[1]);
+    <br>
+    <fieldset><legend><div class="container is-fluid mb-3">
+                <?php
 
-		if($id==$_SESSION['id']){ 
-	?>
-	<h1 class="title">Mi foto de perfil</h1>
-	<h2 class="subtitle"><i class="fas fa-camera"></i> &nbsp; Actualizar foto de perfil</h2>
-	<?php }else{ ?>
-	<h1 class="title">Usuarios</h1>
-	<h2 class="subtitle"><i class="fas fa-camera"></i> &nbsp; Actualizar foto de perfil</h2>
-	<?php } ?>
-</div>
-<div class="container pb-6 pt-6">
+                $id=$insLogin->limpiarCadena($url[1]);
+
+                if($id==$_SESSION['id']){
+                    ?>
+                    <h1 class="title">Mi foto de perfil</h1>
+                    <h2 class="subtitle"><i class="fas fa-camera"></i> &nbsp; Actualizar foto de perfil</h2>
+                <?php }else{ ?>
+                    <h1 class="title">Usuarios</h1>
+                    <h2 class="subtitle"><i class="fas fa-camera"></i> &nbsp; Actualizar foto de perfil</h2>
+                <?php } ?>
+            </div></legend>
+
+        <fiel class="container pb-6 pt-6">
 	<?php
 	
 		include "./app/views/inc/btn_back.php";
@@ -50,8 +54,9 @@
 		</div>
 
 
-		<div class="column">
-			<h4 class="subtitle is-4 has-text-centered pb-6">Actualizar foto de usuario</h4>
+		<div class="column " id="contenedor">
+            <fieldset><legend>
+                    <h4 class="subtitle is-4 has-text-centered pb-6"><i class="fas fa-camera"></i> Actualizar foto de usuario </h4> </legend>
 			<form class="mb-6 has-text-centered FormularioAjax" action="<?php echo APP_URL; ?>app/ajax/usuarioAjax.php" method="POST" enctype="multipart/form-data" autocomplete="off" >
 
 				<input type="hidden" name="modulo_usuario" value="actualizarFoto">
@@ -76,9 +81,12 @@
 			</form>
 		</div>
 	</div>
+    </fieldset>
 	<?php
 		}else{
 			include "./app/views/inc/error_alert.php";
 		}
 	?>
+</div>
+        </fieldset>
 </div>

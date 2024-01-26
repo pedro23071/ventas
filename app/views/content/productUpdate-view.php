@@ -1,13 +1,13 @@
+<div id="contenedor">
 <div class="container is-fluid mb-6">
 	<h1 class="title">Productos</h1>
-	<h2 class="subtitle"><i class="fas fa-sync-alt"></i> &nbsp; Actualizar producto</h2>
+
+    <?php  include "./app/views/inc/btn_back.php";?>
+
 </div>
-
-<div class="container pb-6 pt-6">
+<fieldset><legend><h2 class="subtitle"><i class="fas fa-sync-alt"></i> &nbsp; Actualizar producto</h2></legend>
+<div class="container pb-2 pt-0">
 	<?php
-	
-		include "./app/views/inc/btn_back.php";
-
 		$id=$insLogin->limpiarCadena($url[1]);
 
 		$datos=$insLogin->seleccionarDatos("Unico","producto","producto_id",$id);
@@ -110,21 +110,30 @@
                             	}
                                 $cc++;
                             }
+
+
                         ?>
 				  	</select>
 				</div>
 		  	</div>
 		</div>
-		<p class="has-text-centered">
-			<button type="submit" class="button is-success is-rounded"><i class="fas fa-sync-alt"></i> &nbsp; Actualizar</button>
-		</p>
-		<p class="has-text-centered pt-6">
-            <small>Los campos marcados con <?php echo CAMPO_OBLIGATORIO; ?> son obligatorios</small>
-        </p>
+
+
+        <p class="has-text-centered">
+            <button type="submit" class="button is-success is-rounded"><i class="fas fa-sync-alt"></i> &nbsp; Actualizar</button></p>
 	</form>
 	<?php
 		}else{
 			include "./app/views/inc/error_alert.php";
+
 		}
 	?>
+</fieldset>
+    <p class="has-text-centered pt-6">
+        <small>Los <b>campos</b> marcados con <?php echo CAMPO_OBLIGATORIO; ?> son <b>obligatorios</b></small>
+    </p>
+
+</div>
+
+
 </div>

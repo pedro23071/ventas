@@ -123,7 +123,8 @@ body,html{
 }
 /*=============Estilos barra superior*/
 .navBar {
-    background-color: rgba(19, 21, 26, 0.8); /* Utiliza un valor alfa menor para mayor transparencia */
+    /*background-color: rgba(19, 21, 26, 0.8); !* Utiliza un valor alfa menor para mayor transparencia *!*/
+    background-color: #2f323b;
     height: 50px;
     color: #fff;
     position: relative;

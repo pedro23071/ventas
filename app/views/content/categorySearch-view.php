@@ -1,8 +1,11 @@
+<?php require_once "marginAuto.php"; ?>
+<div id="contenedor">
 <div class="container is-fluid mb-6">
     <h1 class="title">Categorías</h1>
-    <h2 class="subtitle"><i class="fas fa-search fa-fw"></i> &nbsp; Buscar categorías</h2>
-</div>
 
+</div>
+    <?php  include "./app/views/inc/btn_back.php"; ?>
+    <fieldset><legend> <h2 class="subtitle"><i class="fas fa-search fa-fw"></i> &nbsp; Buscar categorías</h2></legend>
 <div class="container pb-6 pt-6">
     <?php
     
@@ -44,3 +47,6 @@
         }
     ?>
 </div>
+
+</div>
+</fieldset>

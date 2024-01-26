@@ -1,14 +1,14 @@
-<div class="container is-fluid mb-6">
+<?php require_once "marginAuto.php"; ?>
+<div id="contenedor">
+<div class="container is-fluid mb-4">
 	<h1 class="title">Clientes</h1>
-	<h2 class="subtitle"><i class="fas fa-sync-alt"></i> &nbsp; Actualizar cliente</h2>
-</div>
 
+</div>
+<?php include "./app/views/inc/btn_back.php"; ?>
+    <fieldset><legend><h2 class="subtitle"><i class="fas fa-sync-alt"></i> &nbsp; Actualizar cliente</h2></legend>
 <div class="container pb-6 pt-6">
 	<?php
-	
-		include "./app/views/inc/btn_back.php";
-
-		$id=$insLogin->limpiarCadena($url[1]);
+        $id=$insLogin->limpiarCadena($url[1]);
 
 		$datos=$insLogin->seleccionarDatos("Unico","cliente","cliente_id",$id);
 
@@ -94,13 +94,16 @@
 		<p class="has-text-centered">
 			<button type="submit" class="button is-success is-rounded"><i class="fas fa-sync-alt"></i> &nbsp; Actualizar</button>
 		</p>
-		<p class="has-text-centered pt-6">
-            <small>Los campos marcados con <?php echo CAMPO_OBLIGATORIO; ?> son obligatorios</small>
-        </p>
+
 	</form>
 	<?php
 		}else{
 			include "./app/views/inc/error_alert.php";
 		}
 	?>
+</div>
+    </fieldset>
+    <p class="has-text-centered pt-6">
+        <small>Los <b>campos</b> marcados con <?php echo CAMPO_OBLIGATORIO; ?> son <b>obligatorios</b></small>
+    </p>
 </div>

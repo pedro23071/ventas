@@ -1,9 +1,12 @@
+<div id="contenedor" style="max-width: 1800px">
+
 <div class="container is-fluid mb-6">
 	<h1 class="title">Ventas</h1>
-	<h2 class="subtitle"><i class="fas fa-shopping-bag fa-fw"></i> &nbsp; Información de venta</h2>
+
 </div>
 
-<div class="container pb-6 pt-6">
+    <fieldset><legend><h2 class="subtitle"><i class="fas fa-shopping-bag fa-fw"></i> &nbsp; Información de venta</h2></legend>
+<div class="container pb-6 pt-4">
 	<?php
 	
 		include "./app/views/inc/btn_back.php";
@@ -153,3 +156,6 @@
 		}
 	?>
 </div>
+    </fieldset>
+</div>
+
