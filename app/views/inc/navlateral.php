@@ -380,16 +380,6 @@
                     </a>
                     <ul class="full-width menu-principal sub-menu-options">
                         <li class="full-width">
-                            <a href="<?php echo APP_URL; ?>devoNew/" class="full-width">
-                                <div class="navLateral-body-cl">
-                                    <i class="fas fa-cash-register fa-fw"></i>
-                                </div>
-                                <div class="navLateral-body-cr">
-                                    Nueva devolucion
-                                </div>
-                            </a>
-                        </li>
-                        <li class="full-width">
                             <a href="<?php echo APP_URL; ?>devoList/" class="full-width">
                                 <div class="navLateral-body-cl">
                                     <i class="fas fa-clipboard-list fa-fw"></i>

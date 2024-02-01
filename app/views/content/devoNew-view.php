@@ -104,16 +104,17 @@
                                     $cc=1;
 
                                     foreach($detalle_venta as $detalle){
+                                        $jsonDatos = json_encode($detalle);
                                         ?>
-                                        <tr class="has-text-centered" >
+                                        <tr class="has-text-centered" id="<?php echo $detalle['venta_detalle_id']; ?>" data-info="<?php echo htmlentities($jsonDatos); ?>">
                                             <td><?php echo $cc; ?></td>
                                             <td><?php echo $detalle['venta_detalle_descripcion']; ?></td>
                                             <td><?php echo $detalle['venta_detalle_cantidad']; ?></td>
                                             <td><?php echo MONEDA_SIMBOLO.number_format($detalle['venta_detalle_precio_venta'],MONEDA_DECIMALES,MONEDA_SEPARADOR_DECIMAL,MONEDA_SEPARADOR_MILLAR)." ".MONEDA_NOMBRE; ?></td>
                                             <td><?php echo MONEDA_SIMBOLO.number_format($detalle['venta_detalle_total'],MONEDA_DECIMALES,MONEDA_SEPARADOR_DECIMAL,MONEDA_SEPARADOR_MILLAR)." ".MONEDA_NOMBRE; ?></td>
                                             <td>
-                                                <button>
-                                                    generar devolucion
+                                                <button type="button" class="button" onclick="devolucio_de_item('<?php echo $detalle['venta_detalle_id']; ?>')" title="devolver articulo " >
+                                                    <i class="fas fa-people-carry fa-fw"></i> Devolver Articulo
                                                 </button>
                                             </td>
                                         </tr>
@@ -148,7 +149,9 @@
             <div class="columns pb-6 pt-6">
                 <p class="has-text-centered full-width">
                     <?php
-                        echo '<button type="button" class="button is-link is-light is-medium" onclick="devolucio_de_venta(\''.$datos_venta['venta_codigo'].'\')" title="Cancelar venta '.$datos_venta['venta_id'].'" ><i class="fas fa-people-carry fa-fw"></i> &nbsp; Cancelar Venta Completa</button>';
+                        echo '<button type="button" class="button is-link is-light is-medium" onclick="devolucio_de_venta(\''.$datos_venta['venta_codigo'].'\')" title="Cancelar venta '.$datos_venta['venta_id'].'" >
+                            <i class="fas fa-people-carry fa-fw"></i> Devolver Venta Completa
+                            </button>';
                     ?>
                 </p>
             </div>
@@ -170,12 +173,53 @@
                 return response.json();
             })
             .then(data => {
-                console.log('Respuesta correcta:', data.success());
-                debugger
+                if(!data.status){
+                    alertas_ajax(data)
+                }
+
+                Swal.fire({
+                    icon: data.icono,
+                    title: data.titulo,
+                    text: data.texto,
+                    confirmButtonText: 'Aceptar'
+                });
+
             })
             .catch(error => {
                 console.error('Fetch error:', error);
             });
+
+    }
+
+
+    function devolucio_de_item(item_id){
+        console.log(item_id);
+        let item = $('#' + item_id).data('info');
+        let itemQueryString = encodeURIComponent(JSON.stringify(item));
+        fetch(`<?php echo APP_URL ?>app/ajax/devolucionAjax.php?action=devolucionItem&item=${itemQueryString}`)
+            .then(response => {
+                if (!response.status) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                if(!data.status){
+                    alertas_ajax(data)
+                }
+
+                Swal.fire({
+                    icon: data.icono,
+                    title: data.titulo,
+                    text: data.texto,
+                    confirmButtonText: 'Aceptar'
+                });
+
+            })
+            .catch(error => {
+                console.error('Fetch error:', error);
+            });
+
 
     }
 </script>

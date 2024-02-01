@@ -14,8 +14,8 @@
             echo $devolucion->devolucionAllVenta();
         }
 
-        if($_REQUEST["action"] === "eliminar"){
-            echo $devolucion->eliminarDevolucionControlador();
+        if($_REQUEST["action"] === "devolucionItem"){
+            echo $devolucion->devolucionItem();
         }
 
         if($_REQUEST["action"] === "actualizar"){
