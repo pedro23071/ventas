@@ -196,7 +196,7 @@
                         "tipo"=>"limpiar",
                         "titulo"=>"No puedo obtener la devolucion",
                         "texto"=>"Error al obtener la debolucion y actualizar items",
-                        "icono"=>"success"
+                        "icono"=>"error"
                     ];
                     return json_encode($alerta);
                     exit();
@@ -216,10 +216,183 @@
 
 
         public function devolucionItem(){
-            $item = $this->limpiarCadena(($_REQUEST["item"] ?? ''));
+            $item = $this->limpiarCadena(($_REQUEST["item"] ?? []));
 
-            var_dump($item);
-            die();
+            if(empty($item)){
+                $alerta=[
+                    "status" => false,
+                    "tipo"=>"simple",
+                    "titulo"=>"Error al obtener los parametros de item",
+                    "texto"=>"Error",
+                    "icono"=> "error"
+                ];
+                return json_encode($alerta);
+                exit();
+            }
+
+            $item = json_decode($item, true);
+            $venta_code = $item["venta_codigo"];
+
+            $datos = $this->ejecutarConsulta("SELECT * FROM venta WHERE venta_codigo='$venta_code' and venta_estatus not like '%devuelto%'");
+
+            if($datos->rowCount() <=  0){
+                $alerta=[
+                    "status" => false,
+                    "tipo"=>"simple",
+                    "titulo"=>"La venta ya tiene alguna devolucion",
+                    "texto"=>"la venta cuenta con alguna devolucion",
+                    "icono"=> "error"
+                ];
+                return json_encode($alerta);
+                exit();
+            }
+            $venta = $datos->fetch();
+            if(empty($venta)){
+                $alerta=[
+                    "status" => false,
+                    "tipo"=>"simple",
+                    "titulo"=>"La venta ya tiene alguna devolucion",
+                    "texto"=>"la venta cuenta con alguna devolucion",
+                    "icono"=>"error"
+                ];
+                return json_encode($alerta);
+                exit();
+            }
+
+            $venta_datos_up = [
+                [
+                    "campo_nombre"=>"venta_estatus",
+                    "campo_marcador"=>":Estatus",
+                    "campo_valor"=> 'devuelto-parcial'
+                ]
+            ];
+
+            $condicion=[
+                "condicion_campo"=>"venta_codigo",
+                "condicion_marcador"=>":Codigo",
+                "condicion_valor"=>$venta["venta_codigo"]
+            ];
+
+            if(!$this->actualizarDatos("venta", $venta_datos_up, $condicion)){
+                $alerta=[
+                    "status" => false,
+                    "tipo"=>"simple",
+                    "titulo"=>"Ocurrió un error inesperado",
+                    "texto"=>"No hemos podido actualizar los datos de la venta ".$venta["venta_codigo"].", por favor intente nuevamente",
+                    "icono"=>"error"
+                ];
+
+                return json_encode($alerta);
+                exit();
+            }
+
+
+            $datos_item = $this->ejecutarConsulta("SELECT * FROM producto WHERE producto_id='".$item["producto_id"]."'");
+
+            if($datos_item->rowCount() == 1){
+                $producto_en_db = $datos_item->fetch();
+                $qty = (int)$producto_en_db["producto_stock_total"] + (int)$item['venta_detalle_cantidad'];
+
+                $datos_producto_rs = [
+                    [
+                        "campo_nombre" => "producto_stock_total",
+                        "campo_marcador" => ":Stock",
+                        "campo_valor" => $qty
+                    ]
+                ];
+                $condicion = [
+                    "condicion_campo"=>"producto_id",
+                    "condicion_marcador"=>":ID",
+                    "condicion_valor" => $item['producto_id']
+                ];
+
+                $this->actualizarDatos("producto", $datos_producto_rs, $condicion);
+            }
+
+            $datos_devolucion = [
+                [
+                    "campo_nombre"=>"venta_id",
+                    "campo_marcador"=>":ID",
+                    "campo_valor" => $venta["venta_id"]
+                ],
+                [
+                    "campo_nombre"=>"venta_codigo",
+                    "campo_marcador"=>":Codigo",
+                    "campo_valor" => $venta["venta_codigo"]
+                ],
+                [
+                    "campo_nombre"=>"devolucion_total",
+                    "campo_marcador"=>":Total",
+                    "campo_valor" => $venta["venta_total"]
+                ],
+                [
+                    "campo_nombre"=>"devolucion_usuario_id",
+                    "campo_marcador"=>":Usuario",
+                    "campo_valor" => $_SESSION['id']
+                ]
+            ];
+            /*== Agregando venta ==*/
+            $agregar_devolucion = $this->guardarDatos("devolucion", $datos_devolucion);
+            if($agregar_devolucion->rowCount() == 1){
+                $datos_devolucion = $this->ejecutarConsulta("SELECT * FROM devolucion WHERE venta_codigo='".$venta["venta_codigo"]."'");
+                if($datos_devolucion->rowCount() == 1) {
+                    $devolucion_en_db = $datos_devolucion->fetch();
+
+                    $datos_devolucion_item = [
+                        [
+                            "campo_nombre" => "devolucion_codigo",
+                            "campo_marcador" => ":Codigo",
+                            "campo_valor" => $devolucion_en_db["venta_codigo"]
+                        ],
+                        [
+                            "campo_nombre" => "producto_id",
+                            "campo_marcador" => ":ID",
+                            "campo_valor" => $item['producto_id']
+                        ],
+                        [
+                            "campo_nombre" => "devolucion_producto_qty",
+                            "campo_marcador" => ":Cantidad",
+                            "campo_valor" => $item['venta_detalle_cantidad']
+                        ]
+                    ];
+
+                    $agregar_devolucion_items = $this->guardarDatos("devolucion_producto", $datos_devolucion_item);
+                    if ($agregar_devolucion_items->rowCount() <= 0) {
+                        $alerta = [
+                            "status" => false,
+                            "tipo" => "limpiar",
+                            "titulo" => "No puedo agregar los productos",
+                            "texto" => "No puedo agregar los productos",
+                            "icono" => "error"
+                        ];
+                        return json_encode($alerta);
+                        exit();
+                    }
+
+                    $alerta=[
+                        "status" => true,
+                        "tipo"=>"limpiar",
+                        "titulo"=>"Devolucion registrada",
+                        "texto"=>"La devolucion de ". $item['venta_detalle_descripcion']." se registro con exito",
+                        "icono"=>"success"
+                    ];
+                    return json_encode($alerta);
+                    exit();
+
+                }else{
+                    $alerta=[
+                        "status" => false,
+                        "tipo"=>"limpiar",
+                        "titulo"=>"No puedo obtener la devolucion",
+                        "texto"=>"Error al obtener la debolucion y actualizar items",
+                        "icono"=>"error"
+                    ];
+                    return json_encode($alerta);
+                    exit();
+                }
+            }
+
+
         }
 
     }
