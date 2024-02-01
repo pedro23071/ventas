@@ -15,7 +15,7 @@
         use app\controllers\productController;
         $insProducto = new productController();
     ?>
-    <div class="columns">
+    <div class="columns prodCatDiv" >
 
         <div class="column is-one-third" style="border: solid 1px #b2d9f5; background-color: #6e8791;  border-radius: 8px 8px 8px 8px; ">
             <h2 style="background-color: #cbd6dc; border-radius: 8px 8px 8px 8px; color:#fff;"  class="title has-text-centered">Categorías</h2>
@@ -26,7 +26,7 @@
                 if($datos_categorias->rowCount()>0){
                     $datos_categorias=$datos_categorias->fetchAll();
                     foreach($datos_categorias as $row){
-                        echo '<a href="'.APP_URL.$url[0].'/'.$row['categoria_id'].'/" class="button is-link is-inverted is-fullwidth">'.$row['categoria_nombre'].'</a>';
+                        echo '<a href="'.APP_URL.$url[0].'/'.$row['categoria_id'].'/" class="button is-link is-inverted is-fullwidth custom-link-style">'.$row['categoria_nombre'].'</a>';
                     }
                 }else{
                     echo '<p class="has-text-centered" >No hay categorías registradas</p>';
@@ -34,7 +34,8 @@
             ?>
         </div>
 
-        <div id="contenedor">
+        <div id="contenedor" style="box-shadow: none;" >
+
             <fieldset>
         <div class="column pb-6">
             <?php
@@ -63,6 +64,3 @@
         </fieldset>
     </div>
 
-</div>
-</fieldset>
-</div>

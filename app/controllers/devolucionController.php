@@ -18,7 +18,8 @@
                     "texto"=>"No hemos podido encontrar la venta seleccionada",
                     "icono"=>"error"
                 ];
-                return json_encode($alerta);
+
+                ncode($alerta);
                 exit();
             }
             $venta = $datos->fetch();
