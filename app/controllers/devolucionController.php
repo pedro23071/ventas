@@ -8,15 +8,15 @@
 
         public function devolucionAllVenta(){
             $venta_code = $this->limpiarCadena(($_REQUEST["venta_code"] ?? ''));
-            $datos = $this->ejecutarConsulta("SELECT * FROM venta WHERE venta_codigo='$venta_code'");
+            $datos = $this->ejecutarConsulta("SELECT * FROM venta WHERE venta_codigo='$venta_code' and venta_estatus not like '%devuelto%'");
 
             if($datos->rowCount() <=  0){
                 $alerta=[
                     "status" => false,
                     "tipo"=>"simple",
-                    "titulo"=>"Ocurrió un error inesperado",
-                    "texto"=>"No hemos podido encontrar la venta seleccionada",
-                    "icono"=>"error"
+                    "titulo"=>"La venta ya tiene alguna devolucion",
+                    "texto"=>"la venta cuenta con alguna devolucion",
+                    "icono"=> "error"
                 ];
                 return json_encode($alerta);
                 exit();
@@ -26,8 +26,8 @@
                 $alerta=[
                     "status" => false,
                     "tipo"=>"simple",
-                    "titulo"=>"Ocurrió un error inesperado",
-                    "texto"=>"No hemos podido encontrar la venta seleccionada",
+                    "titulo"=>"La venta ya tiene alguna devolucion",
+                    "texto"=>"la venta cuenta con alguna devolucion",
                     "icono"=>"error"
                 ];
                 return json_encode($alerta);
@@ -148,9 +148,9 @@
 
                         $datos_devolucion_item = [
                             [
-                                "campo_nombre"=>"devolucion_id",
-                                "campo_marcador"=>":ID",
-                                "campo_valor" => $devolucion_en_db["devolucion_id"]
+                                "campo_nombre"=>"devolucion_codigo",
+                                "campo_marcador"=>":Codigo",
+                                "campo_valor" => $devolucion_en_db["venta_codigo"]
                             ],
                             [
                                 "campo_nombre"=>"producto_id",
@@ -171,7 +171,7 @@
                                 "tipo"=>"limpiar",
                                 "titulo"=>"No puedo agregar los productos",
                                 "texto"=>"No puedo agregar los productos",
-                                "icono"=>"success"
+                                "icono"=>"error"
                             ];
                             return json_encode($alerta);
                             exit();
@@ -215,12 +215,11 @@
         }
 
 
-        public function eliminarDevolucionControlador(){
+        public function devolucionItem(){
+            $item = $this->limpiarCadena(($_REQUEST["item"] ?? ''));
 
-        }
-
-        public function actualizarDevolucionControlador(){
-
+            var_dump($item);
+            die();
         }
 
     }
