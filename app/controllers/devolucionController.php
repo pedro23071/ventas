@@ -395,4 +395,18 @@
 
         }
 
+
+        public function getdevoluciones(){
+
+            $datos_devolucion = $this->ejecutarConsulta("SELECT * FROM devolucion;");
+
+            if($datos_devolucion->rowCount() > 0) {
+                $devoluciones = $datos_devolucion->fetchAll();
+                return $devoluciones;
+            }
+
+            return [];
+
+        }
+
     }
