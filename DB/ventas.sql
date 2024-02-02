@@ -327,11 +327,10 @@ CREATE TABLE IF NOT EXISTS devolucion(
                            FOREIGN KEY (venta_id) REFERENCES venta(venta_id)
 );
 
-CREATE TABLE IF NOT EXISTS devolucion_producto (
-                                     devolucion_producto_id INT PRIMARY KEY AUTO_INCREMENT,
-                                     devolucion_id INT,
-                                     producto_id INT,
-                                     devolucion_producto_qty INT,
-                                     FOREIGN KEY (devolucion_id) REFERENCES devolucion(devolucion_id),
-                                     FOREIGN KEY (producto_id) REFERENCES producto(producto_id)
-);
+devolucion_producto CREATE TABLE `devolucion_producto` (
+                                                           `devolucion_producto_id` int NOT NULL AUTO_INCREMENT,
+                                                           devolucion_codigo varchar(200) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish2_ci NOT NULL,
+                                                           `producto_id` int NOT NULL,
+                                                           `devolucion_producto_qty` int DEFAULT NULL,
+                                                           PRIMARY KEY (`devolucion_producto_id`)
+                    ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

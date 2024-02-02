@@ -16,8 +16,10 @@
 		  	<div class="column">
 		    	<div class="control">
 					<label>Nombres <?php echo CAMPO_OBLIGATORIO; ?></label>
-				  	<input class="input" type="text" name="usuario_nombre" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{3,40}" maxlength="40" required >
-				</div>
+                    <label>
+                        <input class="input" type="text" name="usuario_nombre" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{3,40}" maxlength="40" required >
+                    </label>
+                </div>
 		  	</div>
 		  	<div class="column">
 		    	<div class="control">
@@ -36,7 +38,7 @@
 		  	<div class="column">
 		    	<div class="control">
 					<label>Email</label>
-				  	<input class="input" type="email" name="usuario_email" maxlength="70" >
+				  	<input class="input" type="email" name="usuario_email" maxlength="70">
 				</div>
 		  	</div>
 		</div>
@@ -94,5 +96,4 @@
     <p class="has-text-centered pt-6">
         <small>Los campos marcados con <?php echo CAMPO_OBLIGATORIO; ?> son obligatorios</small>
     </p>
-</div>
 </div>
